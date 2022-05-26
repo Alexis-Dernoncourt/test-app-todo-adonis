@@ -1,0 +1,16 @@
+@layout('layouts/main')
+@set('title', 'Todos')
+
+@section('content')
+<div class="container px-6 py-16 mx-auto text-center">
+    <h1 class="text-3xl font-bold text-gray-800 md:text-4xl">Liste des Todos</h1>
+    <div class="w-full my-8">
+        <small><a href="/todos/create" class="hover:text-blue-600">+ Créer un Todo +</a></small>
+        <ul class="mt-4">
+            @each(todo in todos)
+                <li class="my-4"><a href="{{ route('todos.show', [todo.id]) }}" class="text-md hover:text-blue-500">{{ todo.name }}</a></li>
+            @end
+        </ul>
+    </div>
+</div>
+@end

@@ -1,0 +1,22 @@
+@layout('layouts/main')
+@set('title', 'Todos')
+
+@section('content')
+<div class="container px-6 py-16 mx-auto text-center">
+    <h1 class="text-3xl font-bold text-gray-800 md:text-4xl">Détails du Todo</h1>
+    <div class="w-full my-8">
+        <p class="text-lg">{{ todo.name }}</p>
+    </div>
+    <div>
+        <a href="/todos/edit/{{todo.id}}" class="text-blue-800 hover:text-blue-500">Éditer le Todo</a>
+    </div>
+    <div>
+        <form method="POST" action="http://localhost:3333/todos/{{todo.id}}?_method=DELETE">
+            <button type="submit" class="text-red-800 hover:text-red-500">Supprimer le Todo</button>
+        </form>
+    </div>
+    <div class="mt-6">
+        <small><a href="{{ route('todos.index') }}" class="hover:text-blue-500">< Retourner à la liste des todos</a></small>
+    </div>
+</div>
+@end

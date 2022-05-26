@@ -1,4 +1,5 @@
 import Route from '@ioc:Adonis/Core/Route'
+import './todos/todos'
 
 Route.get('/', async ({ view }) => {
   return view.render('home')
