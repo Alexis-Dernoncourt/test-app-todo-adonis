@@ -4,11 +4,20 @@
 @section('content')
 <div class="container px-6 py-16 mx-auto text-center">
     <h1 class="text-3xl font-bold text-gray-800 md:text-4xl">Liste des Todos</h1>
-    <div class="w-full my-8">
-        <small><a href="/todos/create" class="hover:text-blue-600">+ Créer un Todo +</a></small>
-        <ul class="mt-4">
+    <div class="my-4">
+        <small class="flex flex-row justify-center align-center">
+            <a href="/todos/create" class="md:text-lg text-green-600 hover:text-green-900">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3m0 0v3m0-3h3m-3 0H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+            Créer un Todo
+            </a>
+        </small>
+    </div>
+    <div class="w-full sm:w-8/12 lg:w-6/12 xl:w-4/12 my-8 mx-auto">
+        <ul class="mt-4 mx-12">
             @each(todo in todos)
-                <li class="my-4"><a href="{{ route('todos.show', [todo.id]) }}" class="text-md hover:text-blue-500">{{ todo.name }}</a></li>
+                <li class="my-4 list-disc text-left"><a href="{{ route('todos.show', [todo.id]) }}" class="text-md hover:text-blue-500">{{ todo.name }}</a></li>
             @end
         </ul>
     </div>

@@ -7,16 +7,22 @@
     <div class="w-full my-8">
         <p class="text-lg">{{ todo.name }}</p>
     </div>
-    <div>
-        <a href="/todos/edit/{{todo.id}}" class="text-blue-800 hover:text-blue-500">Éditer le Todo</a>
-    </div>
-    <div>
-        <form method="POST" action="http://localhost:3333/todos/{{todo.id}}?_method=DELETE">
-            <button type="submit" class="text-red-800 hover:text-red-500">Supprimer le Todo</button>
+    <div class="flex flex-col md:flex-row flex-wrap mt-10">
+        <div class="flex-1">
+            <a href="/todos/edit/{{todo.id}}" class="block w-8/12 text-blue-800 hover:text-blue-600 text-center border border-blue-800 hover:border-blue-600 hover:bg-blue-100 rounded py-2 mx-auto">Éditer le Todo</a>
+        </div>
+    
+        <form method="POST" action="http://localhost:3333/todos/{{todo.id}}?_method=DELETE" class="flex-1">
+            <button type="submit" class="text-red-800 hover:text-red-600 border border-red-800 hover:border-red-600 hover:bg-red-100 rounded py-2 mx-auto w-8/12">Supprimer le Todo</button>
         </form>
     </div>
-    <div class="mt-6">
-        <small><a href="{{ route('todos.index') }}" class="hover:text-blue-500">< Retourner à la liste des todos</a></small>
+    <div class="mt-6 flex justify-center items-center">
+        <a href="{{ route('todos.index') }}" class="block w-fit text-base hover:text-blue-500">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 inline" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+            </svg>
+            Retourner à la liste des todos
+        </a>
     </div>
 </div>
 @end

@@ -10,6 +10,13 @@
             <input type="submit" value="Envoyer" class="bg-gray-400 text-white font-bold uppercase py-2 px-4 rounded hover:bg-slate-500 hover:cursor-pointer">
         </form>
     </div>
-    <small><a href="{{ route('todos.index') }}" class="hover:text-blue-500">< Retourner à la liste des todos</a></small>
+    <div class="mt-6 flex justify-center items-center">
+        <a href="{{ route('todos.index') }}" class="block w-fit text-base hover:text-blue-500">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 inline" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+            </svg>
+            Retourner à la liste des todos
+        </a>
+    </div>
 </div>
 @end
